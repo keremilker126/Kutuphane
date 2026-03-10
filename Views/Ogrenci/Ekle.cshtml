@@ -1,0 +1,53 @@
+<form asp-controller="Ogrenci" asp-action="Ekle" method="post">
+    <div class="card-body">
+
+        <div class="mb-3">
+            <label for="OgrenciId" class="form-label">Öğrenci No (ID)</label>
+            <input type="number" class="form-control" id="OgrenciId" name="OgrenciId" required>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6 mb-3">
+                <label for="OgrenciAdi" class="form-label">Adı</label>
+                <input type="text" class="form-control" id="OgrenciAdi" name="OgrenciAdi" required>
+            </div>
+
+            <div class="col-md-6 mb-3">
+                <label for="OgrenciSoyAdi" class="form-label">Soyadı</label>
+                <input type="text" class="form-control" id="OgrenciSoyAdi" name="OgrenciSoyAdi" required>
+            </div>
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label d-block">Cinsiyet</label>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="Cinsiyet" id="Erkek" value="Erkek" required>
+                <label class="form-check-label" for="Erkek">Erkek</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="Cinsiyet" id="Kadin" value="Kadın" required>
+                <label class="form-check-label" for="Kadin">Kadın</label>
+            </div>
+        </div>
+
+        <div class="mb-3">
+            <label for="Sinifi" class="form-label">Sınıfı</label>
+            <input type="number" class="form-control" id="Sinifi" name="Sinifi" min="1" max="12" required>
+        </div>
+
+        <div class="mb-3">
+            <label for="TelNo" class="form-label">Telefon Numarası (Opsiyonel)</label>
+            <input type="tel" class="form-control" id="TelNo" name="TelNo" placeholder="05XX XXX XX XX">
+        </div>
+
+        <hr>
+
+        <div class="d-grid">
+            <button type="submit" class="btn btn-success">Öğrenciyi Kaydet</button>
+        </div>
+
+
+    </div>
+
+
+</form>

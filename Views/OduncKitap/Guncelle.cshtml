@@ -1,0 +1,41 @@
+
+@using Kutuphane.Data
+@using Kutuphane.Models
+@model OduncKitap
+<form asp-controller="OduncKitap" asp-action="Guncelle" method="post">
+    <div class="mb-3">
+        <label for="KitapId" class="form-label">Kitap Adı</label>
+        <select name="KitapId" id="KitapId" class="form-control">
+            <option value="">Kitap Seçiniz</option>
+            @foreach (var kitap in ViewBag.Kitaplar)
+            {
+                <option value="@kitap.KitapId">@kitap.KitapAdi</option>
+            }
+        </select>
+    </div>
+    <div class="mb-3">
+        <label for="OgrenciId" class="form-label">Öğrenci Adı</label>
+        <select name="OgrenciId" id="OgrenciId" class="form-control">
+            <option value="">Öğrenci Seçiniz</option>
+            @foreach (var ogrenci in ViewBag.Ogrenciler)
+            {
+                <option value="@ogrenci.OgrenciId">@ogrenci.OgrenciAdi @ogrenci.OgrenciSoyAdi</option>
+            }
+        </select>
+    </div>
+    <div class="mb-3">
+        <label for="SayfaSayisi" class="form-label">Sayfa Sayısı</label>
+        <input type="number" class="form-control" value="@Model.SayfaSayisi" id="SayfaSayisi" name="SayfaSayisi">
+    </div>
+    <div class="mb-3">
+        <label for="AlinmaTarihi" class="form-label">Alınma Tarihi</label>
+        <input type="date" class="form-control" id="AlinmaTarihi" name="AlinmaTarihi" value="@Model.AlinmaTarihi.ToString("yyyy-MM-dd")" readonly>
+    </div>
+
+    <div class="mb-3">
+        <label for="GetirilmesiIstenenTarih" class="form-label">Getirilmesi İstenen Tarih</label>
+        <input type="date" class="form-control" id="GetirilmesiIstenenTarih" value="@Model.GetirilmesiIstenenTarih.ToString("yyyy-MM-dd")" name="GetirilmesiIstenenTarih">
+    </div>
+    <button type="submit" class="btn btn-primary">Guncelle</button>
+</form>
+

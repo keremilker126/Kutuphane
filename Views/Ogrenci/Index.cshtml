@@ -1,0 +1,38 @@
+﻿@model List<Ogrenci>
+
+
+
+<h1>Öğrenciler</h1>
+<br>
+<a class="btn btn-success" asp-action="Ekle" asp-controller="Ogrenci">Yeni Öğrenci Ekle</a>
+<br>
+<br>
+<table class="table table-danger">
+    <thead>
+        <th>Öğrenci Id</th>
+        <th>Öğrenci Ad</th>
+        <th>Öğrenci Soyad</th>
+        <th>Öğrenci Cinsiyet</th>
+        <th>Öğrenci Sinif</th>
+        <th>Öğrenci TelNo</th>
+        <th>Düzenle</th>
+        <th>Sil</th>
+    </thead>
+    <tbody>
+        @foreach(var ogrenci in Model)
+        {
+        <tr>
+            <td>@ogrenci.OgrenciId</td>
+            <td>@ogrenci.OgrenciAdi</td>
+            <td>@ogrenci.OgrenciSoyAdi</td>
+            <td>@ogrenci.Cinsiyet</td>
+            <td>@ogrenci.Sinifi</td>
+            <td>@ogrenci.TelNo</td>
+            <td><a class="btn btn-warning" asp-controller="Ogrenci" asp-action="Guncelle" asp-route-id=@ogrenci.OgrenciId>Düzenle</a></td>
+            <td><a class="btn btn-danger" asp-controller="Ogrenci" asp-action="Sil" asp-route-id=@ogrenci.OgrenciId>Sil</a></td>
+        </tr> 
+        }
+    </tbody>
+
+
+</table>

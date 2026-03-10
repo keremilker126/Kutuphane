@@ -1,0 +1,13 @@
+@model KitapTur
+
+<form method="post" asp-controller="KitapTur" asp-action="Guncelle">
+    <div class="mb-3">
+        <label for="TurId" class="form-label">Kitap Türü Id</label>
+        <input type="number" class="form-control" id="TurId" name="TurId" value="@Model.TurId" readonly>
+    </div>
+    <div class="mb-3">
+        <label for="TurAdi" class="form-label">Kitap Türü Adı</label>
+        <input type="text" class="form-control" id="TurAdi" name="TurAdi" value="@Model.TurAdi" required>
+    </div>
+    <button type="submit" class="btn btn-primary">Güncelle</button>
+</form>

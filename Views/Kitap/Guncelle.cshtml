@@ -1,0 +1,28 @@
+@model Kitap
+<form asp-controller="Kitap" asp-action="Guncelle" method="post">
+    <div class="form-group">
+        <label for="KitapId">Kitap Id</label>
+        <input type="number" class="form-control" id="KitapId" name="KitapId" value="@Model.KitapId" readonly>
+    </div>
+    <div class="form-group">
+        <label for="TurId">Tür Id</label>
+        <input type="number" class="form-control" id="TurId" name="TurId" value="@Model.TurId">
+    </div>
+    <div class="form-group">
+        <label for="KitapAdi">Kitap Adı</label>
+        <input type="text" class="form-control" id="KitapAdi" name="KitapAdi" value="@Model.KitapAdi">
+    </div>
+    <div class="form-group">
+        <label for="Yazar">Yazar</label>
+        <input type="text" class="form-control" id="Yazar" name="Yazar" value="@Model.Yazar">
+    </div>
+    <div class="form-group">
+        <label for="Yayinevi">Yayınevi</label>
+        <input type="text" class="form-control" id="Yayinevi" name="Yayinevi" value="@Model.Yayinevi">
+    </div>
+    <div class="form-group">
+        <label for="SayfaSayisi">Sayfa Sayısı</label>
+        <input type="number" class="form-control" id="SayfaSayisi" name="SayfaSayisi" value="@Model.SayfaSayisi">
+    </div>
+    <button type="submit" class="btn btn-primary">Güncelle</button>
+</form>

@@ -1,0 +1,63 @@
+﻿<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Kütüphane Yönetim Paneli</title>
+    <script type="importmap"></script>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/Kutuphane.styles.css" asp-append-version="true" />
+</head>
+<body class="bg-light">
+    <div class="d-flex" id="wrapper">
+        
+        <div class="bg-dark text-white" id="sidebar-wrapper" style="min-height: 100vh; width: 250px;">
+            <div class="sidebar-heading text-center py-4 fs-4 fw-bold border-bottom border-secondary">
+                <i class="bi bi-book-half text-warning"></i> Kütüphane
+            </div>
+            <div class="list-group list-group-flush my-3">
+                <a asp-controller="Home" asp-action="Index" class="list-group-item list-group-item-action bg-dark text-white border-0">
+                    <i class="bi bi-speedometer2 me-2"></i> Dashboard
+                </a>
+                <a asp-controller="OduncKitap" asp-action="Index" class="list-group-item list-group-item-action bg-dark text-white border-0">
+                    <i class="bi bi-arrow-left-right me-2"></i> Ödünç İşlemleri
+                </a>
+                <a asp-controller="Kitap" asp-action="Index" class="list-group-item list-group-item-action bg-dark text-white border-0">
+                    <i class="bi bi-journal-bookmark-fill me-2"></i> Kitaplar
+                </a>
+                <a asp-controller="Ogrenci" asp-action="Index" class="list-group-item list-group-item-action bg-dark text-white border-0">
+                    <i class="bi bi-people-fill me-2"></i> Öğrenciler
+                </a>
+                <a asp-controller="KitapTur" asp-action="Index" class="list-group-item list-group-item-action bg-dark text-white border-0">
+                    <i class="bi bi-tags-fill me-2"></i> Kitap Türleri
+                </a>
+            </div>
+        </div>
+
+        <div id="page-content-wrapper" class="w-100">
+            <nav class="navbar navbar-expand-lg navbar-light bg-white border-bottom shadow-sm px-4 py-3">
+                <div class="container-fluid">
+                    <span class="navbar-brand mb-0 h1">@ViewData["Title"]</span>
+                    <div class="collapse navbar-collapse justify-content-end">
+                        <ul class="navbar-nav mb-2 mb-lg-0">
+                           
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+
+            <div class="container-fluid px-4 py-4">
+                <main role="main">
+                    @RenderBody()
+                </main>
+            </div>
+        </div>
+    </div>
+
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

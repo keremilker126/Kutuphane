@@ -1,0 +1,38 @@
+﻿@model List<Kitap>
+
+
+
+<h1>Kitaplar</h1>
+<br>
+
+<a class="btn btn-success" asp-controller="Kitap" asp-action="Ekle">Yeni Kitap Ekle</a>
+<br>
+<br>
+<table class="table table-primary">
+    <thead>
+        <th>Kitap Id</th>
+        <th>Tür Id</th>
+        <th>Kitap Adı</th>
+        <th>Yazar</th>
+        <th>Yayınevi</th>
+        <th>Sayfa Sayısı</th>
+        <th>Düzenle</th>
+        <th>Sil</th>
+    </thead>
+    <tbody>
+        @foreach(var kitap in Model){
+        <tr>
+            <td>@kitap.KitapId</td>
+            <td>@kitap.TurId</td>
+            <td>@kitap.KitapAdi</td>
+            <td>@kitap.Yazar</td>
+            <td>@kitap.Yayinevi</td>
+            <td>@kitap.SayfaSayisi</td>
+            <td><a class="btn btn-warning" asp-controller="Kitap" asp-action="Guncelle" asp-route-id=@kitap.KitapId>Düzenle</a></td>
+            <td><a class="btn btn-danger" asp-controller="Kitap" asp-action="Sil" asp-route-id=@kitap.KitapId>Sil</a></td> 
+        </tr>
+        }
+        
+
+    </tbody>
+</table>
